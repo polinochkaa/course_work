@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конференция НННФ</title>
+    <link rel="stylesheet" href="styles/personalpage_style.css">
+    <link rel="shortcut icon" type="image/png" href="images/n3ph.png">
+    <link href="C:\Users\akish\WebstormProjects\курсовая\models\usermodel.js">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="navbar">
+            <div class="nav-list">
+                <a class="rel" href=" http://127.0.0.1:7000/">Главная страница</a>
+                <a class="rel" href=" http://127.0.0.1:7000/archive">Архив</a>
+                <a class="rel" href=" http://127.0.0.1:7000/komitet">Программный комитет</a>
+                <a class="rel" href=" http://127.0.0.1:7000/admin">Личный кабинет</a>
+                <div class="drop">
+                    <button>Смотреть трансляцию</button>
+                    <div class="translation-list">
+                        <div><a href="https://meet.google.com/fow-uatv-ddr">Конференц зал</a></div>
+                        <div><a href="https://meet.google.com/iwi-mzag-bgc">Малый зал</a></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="rel" href="http://127.0.0.1:7000/">Выйти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-left"></div>
+
+
+    <div class="main-body">
+        <h1>User List</h1>
+        <ul id="userList"></ul>
+    </div>
+
+    <div class="panel-right"></div>
+
+
+    <div class="footer">
+        <p>Copyright © 2024 Polina Akishina</p>
+    </div>
+
+
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const userList = document.getElementById("userList");
+
+        fetch('http://localhost:3000/admin')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(User => {
+                    const li = document.createElement('li');
+                    li.innerHTML = User.email, User.password;
+                    userList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
+<script>
+    fetch('/admin')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('#usersTable tbody');
+            data.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML =
+                    <td>${user.email}</td>
+                <td>${user.role}</td>
+                tableBody.appendChild(row);
+            });
+        });
+</script>
+
+
+</body>
+</html>

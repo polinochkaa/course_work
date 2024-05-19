@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Конференция "Наноэлектроника, нанофотоника и нелинейная физика"</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/registration_style.css">
+    <link rel="shortcut icon" type="image/png" href="images/n3ph.png">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="navbar">
+            <div class="nav-list">
+                <a class="rel" href=" http://127.0.0.1:7000/">Главная страница</a>
+                <a class="rel" href=" http://127.0.0.1:7000/archive">Архив</a>
+                <a class="rel" href=" http://127.0.0.1:7000/komitet">Программный комитет</a>
+                <div class="drop">
+                    <button>Смотреть трансляцию</button>
+                    <div class="translation-list">
+                        <div><a href="https://meet.google.com/fow-uatv-ddr">Конференц зал</a></div>
+                        <div><a href="https://meet.google.com/iwi-mzag-bgc">Малый зал</a></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="rel" href="http://127.0.0.1:7000/login">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-left"></div>
+
+    <div class="main-body">
+        <div class="login">
+            <h3>Регистрация</h3>
+            <form action="/register" method="POST">
+
+                    <label>Электронная почта</label>
+                    <input type="text" class="form-control" placeholder="ivanov@gmail.com" name="email">
+
+                    <label>Пароль</label>
+                    <input type="password" class="form-control" placeholder="*********" name="password">
+
+                    <button type="submit" >Подвердить</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="panel-right"></div>
+
+
+    <div class="footer">
+        <p>Copyright © 2024 Polina Akishina</p>
+    </div>
+</div>
+
+
+</body>
+</html>
